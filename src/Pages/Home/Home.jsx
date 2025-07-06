@@ -5,10 +5,10 @@ import Loader from "../../Components/Loader/Loader";
 import Error404 from "../404/Error404";
 import Swiper from "swiper";
 import "swiper/css";
-import image1 from "../../assets/slider-image-1.jpeg";
-import image2 from "../../assets/slider-image-2.jpeg";
-import image3 from "../../assets/slider-image-3.jpeg";
 import ScrollReveal from "scrollreveal";
+import homeImg from '../../assets/photo-1487744480471-9ca1bca6fb7d.jpg'
+import img1 from '../../assets/imgi_1_product5-DZxbnV6L.jpg'
+import img2 from '../../assets/imgi_2_product4-CxeAzYXu.jpg'
 
 
 export default function Home() {
@@ -45,16 +45,16 @@ export default function Home() {
 <div className="flex flex-col sm:flex-row w-full h-auto overflow-hidden my-3">
   {/* Left image */}
   <div className="sm:w-2/3 w-full h-[300px] sm:h-[450px]">
-    <img src={image3} alt="" className="w-full h-full object-cover" />
+    <img src={homeImg} alt="" className="w-full h-full object-cover" />
   </div>
 
   {/* Right images stacked */}
   <div className="sm:w-1/3 w-full h-[300px] sm:h-[450px] flex flex-col">
     <div className="h-1/2">
-      <img src={image1} alt="" className="w-full h-full object-cover" />
+      <img src={img1} alt="" className="w-full h-full object-cover" />
     </div>
     <div className="h-1/2">
-      <img src={image2} alt="" className="w-full h-full object-cover" />
+      <img src={img2} alt="" className="w-full h-full object-cover" />
     </div>
   </div>
 </div>

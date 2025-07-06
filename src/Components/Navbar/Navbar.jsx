@@ -64,7 +64,8 @@ export default function Navbar() {
           </ul>
         ) : null}
 
-        <div className="flex">
+        {/* social media icons */}
+        {/* <div className="flex">
           <ul className="flex items-center justify-center space-x-2 cursor-pointer">
             <li>
               <Facebook className="text-blue-600" />
@@ -80,7 +81,7 @@ export default function Navbar() {
               <Linkedin className="text-blue-700" />
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* auth links */}
         <ul className="hidden lg:flex xl:flex space-x-6 items-center justify-center">

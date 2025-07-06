@@ -14,15 +14,13 @@ import ProtectesRoutes from "./Protected/ProtectesRoutes";
 import AuthContextProvider from "./Context/AuthContext";
 import LoginProtected from "./Protected/LoginProtected";
 import ForgetPassword from "./Pages/ForgetPassword/ForgetPassword";
-import VerifyOtp from "./Pages/verifyOTP/VerifyOtp";
+import VerifyOtp from "./Pages/VerifyOtp/verifyOtp";
 import ResetPassword from "./Pages/ResetPassword/ResetPassword";
 import Error404 from "./Pages/404/Error404";
 import ProductDetails from "./Pages/ProductDetails/ProductDetails";
 import CartContextProvider from "./Context/CartContext";
 import AllOrders from "./Pages/AllOrders/AllOrders";
-import webImg from '../src/assets/favicon.png'
 
-<link rel="shortcut icon" href="" type="image/x-icon"></link>
 
 const router = createBrowserRouter([
   {

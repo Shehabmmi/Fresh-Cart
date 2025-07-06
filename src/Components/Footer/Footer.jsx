@@ -35,7 +35,7 @@ export default function Footer() {
         <div className='flex flex-col sm:flex-row items-start sm:items-center gap-4 flex-wrap'>
           <p className='text-xl min-w-max'>Payment Partners</p>
           <div className='flex flex-wrap gap-3'>
-            <img className='w-16' src={amazonLogo} alt='amazonLogo' />
+            <img className='w-16 object-contain' src={amazonLogo} alt='amazonLogo' />
             <img className='w-16' src={masterCardLogo} alt='masterCardLogo' />
             <img className='w-16' src={payPal} alt='payPal' />
             <img className='w-16' src={americanExpress} alt='americanExpress' />
@@ -46,7 +46,7 @@ export default function Footer() {
         <div className='flex flex-col sm:flex-row items-start sm:items-center space-x-4'>
           <p className='text-xl min-w-max'>Get deliveries with FreshCart</p>
           <div className='flex gap-3'>
-            <img className='w-24' src={appleStore} alt='appleStore' />
+            <img className='w-24 ' src={appleStore} alt='appleStore' />
             <img className='w-24' src={googlePlay} alt='googlePlay' />
           </div>
         </div>
