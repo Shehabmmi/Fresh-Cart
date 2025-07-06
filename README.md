@@ -1,13 +1,47 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 # Fresh-Cart
+Fresh-Cart is a modern e-commerce web application built with React and Vite, designed for a seamless online shopping experience. This project demonstrates best practices in React development, state management, and responsive design.
+
+## Tech Stack
+
+- **React**: Frontend UI library
+- **Vite**: Fast build tool and development server
+- **React Router DOM**: Client-side routing
+- **Context API**: State management
+- **Axios**: HTTP client for API requests
+- **Formik & Yup**: Form handling and validation
+- **React Icons**: Icon library
+- **React Toastify**: Notifications
+- **Jest & React Testing Library**: Testing utilities
+- **Tailwind**
+
+## Features & Pages
+
+- **Home Page**: Showcases featured products and categories.
+- **Product Listing**: Browse products by category, filter, and sort.
+- **Product Details**: Detailed view with images, description, and reviews.
+- **Cart**: Add, remove, and update product quantities.
+- **Checkout**: Secure checkout process with form validation.
+- **User Authentication**: Register, login, and manage user profiles.
+- **Order History**: View past orders and order details.
+- **Admin Dashboard**: Manage products, categories, and orders (if applicable).
+- **Responsive Design**: Optimized for desktop and mobile devices.
+
+## Getting Started
+
+1. Clone the repository.
+2. Install dependencies:
+    ```bash
+    npm install
+    ```
+3. Start the development server:
+    ```bash
+    npm run dev
+    ```
+
+## Contributing
+
+Contributions are welcome! Please open issues or submit pull requests for improvements.
+
+## License
+
+This project is licensed under the MIT License.
