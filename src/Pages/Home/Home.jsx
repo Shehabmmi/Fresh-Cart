@@ -3,12 +3,14 @@ import ProductCard from "../../Components/ProductCard/ProductCard";
 import axios from "axios";
 import Loader from "../../Components/Loader/Loader";
 import Error404 from "../404/Error404";
-import Swiper from "swiper";
+// import Swiper from "swiper";
 import "swiper/css";
 import ScrollReveal from "scrollreveal";
 import homeImg from '../../assets/photo-1487744480471-9ca1bca6fb7d.jpg'
 import img1 from '../../assets/imgi_1_product5-DZxbnV6L.jpg'
 import img2 from '../../assets/imgi_2_product4-CxeAzYXu.jpg'
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 
 
 export default function Home() {
@@ -45,6 +47,18 @@ export default function Home() {
 <div className="flex flex-col sm:flex-row w-full h-auto overflow-hidden my-3">
   {/* Left image */}
   <div className="sm:w-2/3 w-full h-[300px] sm:h-[450px]">
+  
+  {/* <Swiper
+      spaceBetween={50}
+      slidesPerView={3}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+    >
+      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+      ...
+    </Swiper> */}
     <img src={homeImg} alt="" className="w-full h-full object-cover" />
   </div>
 
