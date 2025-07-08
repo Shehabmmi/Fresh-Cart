@@ -20,6 +20,9 @@ import Error404 from "./Pages/404/Error404";
 import ProductDetails from "./Pages/ProductDetails/ProductDetails";
 import CartContextProvider from "./Context/CartContext";
 import AllOrders from "./Pages/AllOrders/AllOrders";
+import CategoriesDetails from "./Pages/CategoriesDetails/CategoriesDetails";
+import BrandsDetails from "./Pages/BrandsDetails/BrandsDetails";
+
 
 
 const router = createBrowserRouter([
@@ -129,6 +132,18 @@ const router = createBrowserRouter([
           // {<LoginProtected>}
           <ProductDetails />
           // </LoginProtected>
+        ),
+      },
+      {
+        path: "/categoriesDetails/:id",
+        element: (
+          <CategoriesDetails />
+        ),
+      },
+      {
+        path: "/brandsDetails/:id",
+        element: (
+          <BrandsDetails />
         ),
       },
     ],

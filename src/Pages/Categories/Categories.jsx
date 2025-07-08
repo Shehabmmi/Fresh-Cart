@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export default function Categories() {
 
   const [categories,setCategories] = useState()
   const [loading, setLoading] = useState(false)
+  const navigate = useNavigate();
 
   async function getAllCategories() {
     setLoading(true)
@@ -65,14 +67,10 @@ export default function Categories() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {categories?.map((category) => (
          <div
+         onClick={() => { navigate(`/categoriesDetails/${category._id}`) }}
             key={category._id}
-            className="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform duration-300"
-          >
-            <img
-              src={category.image}
-              alt={category.name}
-              className="w-full h-48 object-cover"
-            />
+            className="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform duration-300">
+            <img src={category.image} alt={category.name} className="w-full h-48 object-cover"/>
             <div className="p-4">
               <h3 className="text-lg font-semibold text-gray-800">
                 {category.name}

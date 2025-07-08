@@ -1,10 +1,13 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export default function Brands() {
 
   const [brands ,setBrands] = useState()
   const [loading, setLoading] = useState(false)
+
+  const navigate = useNavigate();
 
     async function getAllBrands(){
       setLoading(true)
@@ -66,6 +69,7 @@ export default function Brands() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 ">
         {brands?.map((brands) => (
          <div
+         onClick={() => { navigate(`/brandsDetails/${brands._id}`) }}
             key={brands._id}
             className="bg-white rounded-xl shadow-md overflow-hidden hover:scale-105 transition-transform duration-300"
           >
