@@ -46,7 +46,7 @@ export default function BrandsDetails() {
   return (
     <div className="p-4">
       <h2 className="text-2xl text-center text-mainColor border-t-2 border-b-2 p-2 mb-6">
-        Products in Brand
+        Products in Brand 
       </h2>
 
       {products.length === 0 ? (
