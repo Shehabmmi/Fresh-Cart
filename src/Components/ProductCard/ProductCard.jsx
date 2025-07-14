@@ -11,7 +11,7 @@ export default function ProductCard({ item }) {
       <div className="absolute inset-0 flex items-center justify-center bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
         <div className="flex gap-4">
           {/* Heart Icon */}
-          <Link className="bg-black p-2 rounded-full shadow hover:scale-110 transition">
+          <Link className="bg-mainColor p-2 rounded-full shadow hover:scale-110 transition">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -31,7 +31,7 @@ export default function ProductCard({ item }) {
           {/* Cart Icon */}
           <Link onClick={()=>{
             addProductToCart(item._id)
-          }} className="bg-black p-2 rounded-full shadow hover:scale-110 transition">
+          }} className="bg-mainColor p-2 rounded-full shadow hover:scale-110 transition">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -51,7 +51,7 @@ export default function ProductCard({ item }) {
           {/* Eye Icon */}
           <Link
             to={`/productDetails/${item._id}`}
-            className="bg-black p-2 rounded-full shadow hover:scale-110 transition"
+            className="bg-mainColor p-2 rounded-full shadow hover:scale-110 transition"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

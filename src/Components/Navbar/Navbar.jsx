@@ -1,15 +1,5 @@
 /* eslint-disable no-unused-vars */
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  LucideTwitter,
-  Menu,
-  ShoppingCart,
-  Twitter,
-  X,
-  Youtube,
-} from "lucide-react";
+import { Heart, Menu, ShoppingCart } from "lucide-react";
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { authContext } from "../../Context/AuthContext";
@@ -21,6 +11,8 @@ export default function Navbar() {
   let { cart } = useContext(cartContext);
   let [counter, setCounter] = useState(cart?.numOfCartItems);
   const [phone, setPhone] = useState(false);
+  // Placeholder for wishlist count
+  const [wishlistCount] = useState(0); // Replace with context/state when available
 
   function togglePhoneMenu() {
     setPhone(!phone);
@@ -84,20 +76,35 @@ export default function Navbar() {
         </div> */}
 
         {/* auth links */}
+
         <ul className="hidden lg:flex xl:flex space-x-6 items-center justify-center">
           {token ? (
-            <li className="text-xl relative hover:text-mainColor hover:transition-all">
-              <div className="relative">
-                <NavLink to={"/cart"}>
-                  <ShoppingCart />
-                </NavLink>
-                {cart?.numOfCartItems > 0 && (
-                  <div className="bg-mainColor text-white text-xs size-5 flex items-center justify-center rounded-full absolute -top-4 right-3">
-                    {cart?.numOfCartItems}
-                  </div>
-                )}
-              </div>
-            </li>
+            <>
+              <li className="text-xl relative hover:text-mainColor hover:transition-all">
+                <div className="relative flex items-center space-x-2">
+                  <NavLink to={"/wishlist"}>
+                    <Heart />
+                  </NavLink>
+                  {wishlistCount > 0 && (
+                    <div className="bg-pink-500 text-white text-xs size-5 flex items-center justify-center rounded-full absolute -top-4 left-3">
+                      {wishlistCount}
+                    </div>
+                  )}
+                </div>
+              </li>
+              <li className="text-xl relative hover:text-mainColor hover:transition-all">
+                <div className="relative">
+                  <NavLink to={"/cart"}>
+                    <ShoppingCart />
+                  </NavLink>
+                  {cart?.numOfCartItems > 0 && (
+                    <div className="bg-mainColor text-white text-xs size-5 flex items-center justify-center rounded-full absolute -top-4 right-3">
+                      {cart?.numOfCartItems}
+                    </div>
+                  )}
+                </div>
+              </li>
+            </>
           ) : null}
           {!token ? (
             <>
@@ -144,11 +151,29 @@ export default function Navbar() {
             </li>
           </ul>
 
-         <ul className="flex items-center justify-center">
-          {token &&  <NavLink to={"/cart"}>
-            <ShoppingCart className="hover:text-mainColor" />
-          </NavLink> }
-         </ul>
+          <ul className="flex items-center justify-center">
+            {token && (
+              <NavLink to={"/cart"}>
+                <ShoppingCart className="hover:text-mainColor" />
+              </NavLink>
+            )}
+          </ul>
+
+          {/* Wishlist icon on its own line for mobile */}
+          {token && (
+            <ul className="flex items-center justify-center my-2">
+              <NavLink to={"/wishlist"}>
+                <div className="relative">
+                  <Heart className="hover:text-mainColor" />
+                  {wishlistCount > 0 && (
+                    <div className="bg-pink-500 text-white text-xs size-5 flex items-center justify-center rounded-full absolute -top-2 left-3">
+                      {wishlistCount}
+                    </div>
+                  )}
+                </div>
+              </NavLink>
+            </ul>
+          )}
 
           {!token && (
             <ul className="flex items-center flex-col space-y-2 my-2 md:text-center sm:text-center ">

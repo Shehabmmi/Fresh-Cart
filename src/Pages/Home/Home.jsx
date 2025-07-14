@@ -48,17 +48,6 @@ export default function Home() {
   {/* Left image */}
   <div className="sm:w-2/3 w-full h-[300px] sm:h-[450px]">
   
-  {/* <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      ...
-    </Swiper> */}
     <img src={homeImg} alt="" className="w-full h-full object-cover" />
   </div>
 
