@@ -4,7 +4,6 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { object, ref, string } from "yup";
-// import { data } from "react-router-dom";
 
 
 export default function Register() {
@@ -57,7 +56,7 @@ export default function Register() {
   });
 
   return (
-    <div className="py-10">
+    <div className="py-10 w-[80%] m-auto">
       <h2 className="text-3xl font-bold">Register Form</h2>
       {error && <h3 className="text-red-500 text-2xl my-3 text-center">{error}</h3>}
       <form className="my-4" onSubmit={formik.handleSubmit}>

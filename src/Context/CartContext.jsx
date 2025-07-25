@@ -20,7 +20,6 @@ export default function CartContextProvider({ children }) {
           },
         }
       );
-      console.log(data);
       setCart(data);
     } catch (error) {
       console.log(error);
@@ -42,7 +41,6 @@ export default function CartContextProvider({ children }) {
           },
         }
       );
-      console.log(data);
       setCart(data);
       toast.success("item added to card");
     } catch (error) {

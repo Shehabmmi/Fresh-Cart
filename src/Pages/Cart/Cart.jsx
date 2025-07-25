@@ -93,7 +93,7 @@ export default function Cart() {
   // Skilaton loading
   if (loading == true) {
     return (
-      <section class="bg-gray-300 py-8 antialiased md:py-16 my-2 rounded-md animate-pulse">
+      <section class="py-8 antialiased md:py-16 my-2 rounded-md animate-pulse">
         <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
           <div class="h-6 bg-gray-200 rounded w-1/2"></div>
           <div class="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
@@ -105,7 +105,7 @@ export default function Cart() {
               </div>
             </div>
             <div class="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full">
-              <div class="space-y-4 rounded-lg border border-black bg-white p-4 shadow-sm   sm:p-6">
+              <div class="space-y-4 rounded-lg border border-green-400 bg-white p-4 shadow-sm   sm:p-6">
                 <div class="h-6 bg-gray-200 rounded w-1/2"></div>
                 <div class="space-y-4">
                   <div class="space-y-2">
@@ -124,9 +124,9 @@ export default function Cart() {
   }
 
   return (
-    <section className="bg-gray-300 py-8 antialiased md:py-16 my-2 rounded-md">
+    <section className=" py-8 antialiased md:py-16 my-2 rounded">
       <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
-        <h2 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
+        <h2 className="text-xl font-semibold text-mainColor sm:text-2xl">
           Shopping Cart
         </h2>
         <div className="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
@@ -138,10 +138,10 @@ export default function Cart() {
             </div>
           </div>
           <div className="mx-auto mt-6 max-w-4xl flex-1 space-y-6 lg:mt-0 lg:w-full">
-            <div className="space-y-4 rounded-lg border border-black bg-white p-4 shadow-sm   sm:p-6">
+            <div className="space-y-4 rounded-lg border-2 border-green-400 bg-white p-4 shadow-lg   sm:p-6">
               <button
                 onClick={deleteAllCart}
-                className="bg-red-400 text-white p-2 rounded-lg font-bold w-full"
+                className="bg-red-600 hover:bg-red-400 text-white p-2 rounded-lg font-bold w-full cursor-pointer"
               >
                 Delete Cart
               </button>
@@ -174,10 +174,6 @@ export default function Cart() {
                 </dl>
               </div>
 
-              <button className="btn bg-mainColor w-full flex justify-center rounded-md font-bold">
-                Check out
-              </button>
-
               <div className="flex items-center justify-center gap-2">
                 <span className="text-sm font-normal text-gray-500 "> or </span>
                 <Link
@@ -209,14 +205,14 @@ export default function Cart() {
       </div>
 
       {/* Payment Form */}
-      <section className="bg-gray-300 py-8">
+      <section className="300 py-8">
         <div className="mx-auto max-w-screen-xl px-4 2xl:px-0">
           <div className="mx-auto max-w-5xl">
             <div className="mt-6 sm:mt-8 lg:flex lg:items-start lg:gap-12">
               <form
                 onSubmit={formik.handleSubmit}
                 action="#"
-                className="w-full rounded-xl border border-black bg-white p-4 shadow-sm"
+                className="w-full rounded-xl border-2 border-green-400 bg-white p-4 shadow-lg"
               >
                 <h1 className="text-3xl text-center font-bold my-3">
                   Check out

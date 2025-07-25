@@ -63,7 +63,7 @@ export default function Login() {
   }
 
   return (
-    <div className="py-30">
+    <div className="py-30 w-[80%] m-auto">
       <h2 className="text-3xl font-bold">Login Now</h2>
       <form onSubmit={formik.handleSubmit}>
         <div className="my-4">

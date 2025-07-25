@@ -1,8 +1,11 @@
 import axios from 'axios';
-import { Formik, useFormik } from 'formik'
+// Remove these unused imports:
+// import { Formik, useFormik } from 'formik'
+import { useFormik } from 'formik'
 import React from 'react'
 import toast from 'react-hot-toast';
-import { data, useNavigate } from 'react-router-dom';
+// import { data, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { object, string } from 'yup';
 
 export default function ResetPassword() {

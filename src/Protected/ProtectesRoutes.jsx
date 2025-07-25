@@ -6,11 +6,6 @@ import toast from 'react-hot-toast'
 
 export default function ProtectesRoutes({children}) {
 
-
-
-
-
-  
   let {token} = useContext(authContext)
   return (
     <div>

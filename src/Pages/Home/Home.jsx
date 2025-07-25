@@ -3,13 +3,11 @@ import ProductCard from "../../Components/ProductCard/ProductCard";
 import axios from "axios";
 import Loader from "../../Components/Loader/Loader";
 import Error404 from "../404/Error404";
-// import Swiper from "swiper";
-import "swiper/css";
-import ScrollReveal from "scrollreveal";
 import homeImg from '../../assets/photo-1487744480471-9ca1bca6fb7d.jpg'
 import img1 from '../../assets/imgi_1_product5-DZxbnV6L.jpg'
 import img2 from '../../assets/imgi_2_product4-CxeAzYXu.jpg'
-import { Swiper, SwiperSlide } from 'swiper/react';
+import ImageSlider from "../../Components/ImageSlider/ImageSlider";
+
 
 
 
@@ -40,7 +38,6 @@ export default function Home() {
 
 
 
-
   return (
     <div>
       {/* Hero Section */}
@@ -62,6 +59,7 @@ export default function Home() {
   </div>
 </div>
 
+      <ImageSlider/>
 
       {/* Cards */}
       <div className="container py-7"> 

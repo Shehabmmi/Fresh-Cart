@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { cartContext } from "../../Context/CartContext";
 
-export default function CartItem({item}) {
-  console.log('item', item);
+export default function CartItem({ item }) {
+  // console.log('item', item);
 
-  let {deleteSpecificCartItem, updateCartItem, disableBtn} = useContext(cartContext)
-  
+  let { deleteSpecificCartItem, updateCartItem, disableBtn } = useContext(cartContext);
+
   return (
-    <div className="rounded-lg border border-black bg-white p-4 shadow-sm   md:p-6">
+    <div className="rounded-lg border-2 border-green-400 bg-white p-4 shadow-lg md:p-6">
       <div className="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
         <a href="#" className="shrink-0 md:order-1">
           <img
@@ -23,7 +23,9 @@ export default function CartItem({item}) {
               id="decrement-button"
               data-input-counter-decrement="counter-input"
               className="disabled:cursor-not-allowed inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-md border bg-black"
-              onClick={()=>{updateCartItem(item?.count-1,item.product._id)}}
+              onClick={() => {
+                updateCartItem(item?.count - 1, item.product._id);
+              }}
               disabled={disableBtn}
             >
               <svg
@@ -56,7 +58,9 @@ export default function CartItem({item}) {
               id="increment-button"
               data-input-counter-increment="counter-input"
               className=" disabled:cursor-not-allowed inline-flex h-5 w-5  shrink-0 items-center justify-center rounded-md border bg-black"
-              onClick={()=>{updateCartItem(item?.count + 1, item.product._id)}}
+              onClick={() => {
+                updateCartItem(item?.count + 1, item.product._id);
+              }}
               disabled={disableBtn}
             >
               <svg
@@ -86,11 +90,12 @@ export default function CartItem({item}) {
           <div>
             <p className="text-base font-bold text-black">
               {item?.product.title}
-          </p>
-            <span className="text-mainColor text-sm">{item?.product.category?.name} | {item?.product.brand?.name}</span>
+            </p>
+            <span className="text-mainColor text-sm">
+              {item?.product.category?.name} | {item?.product.brand?.name}
+            </span>
           </div>
-          
-          
+
           <div className="flex items-center gap-4">
             <button
               type="button"
@@ -118,7 +123,9 @@ export default function CartItem({item}) {
             <button
               type="button"
               className="inline-flex items-center text-sm font-medium text-red-600 hover:underline dark:text-red-500"
-              onClick={()=>{deleteSpecificCartItem(item?.product._id)}}
+              onClick={() => {
+                deleteSpecificCartItem(item?.product._id);
+              }}
             >
               <svg
                 className="me-1.5 h-5 w-5"

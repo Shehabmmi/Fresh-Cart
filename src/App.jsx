@@ -1,7 +1,8 @@
-// import { useState } from "react";
+// import { useState } from "react"; // Already commented out ✅
 import { Toaster } from "react-hot-toast";
 import Layout from "./Components/Layout/Layout";
-import Navbar from "./Components/Navbar/Navbar";
+// Remove this unused import:
+// import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
@@ -22,6 +23,8 @@ import CartContextProvider from "./Context/CartContext";
 import AllOrders from "./Pages/AllOrders/AllOrders";
 import CategoriesDetails from "./Pages/CategoriesDetails/CategoriesDetails";
 import BrandsDetails from "./Pages/BrandsDetails/BrandsDetails";
+import WishList from "./Pages/WishList/WishList";
+import WishListContextProvider from "./Context/WishListContext";
 
 
 
@@ -146,6 +149,14 @@ const router = createBrowserRouter([
           <BrandsDetails />
         ),
       },
+      {
+        path: "/wishList",
+        element: (
+          <ProtectesRoutes>
+            <WishList />
+          </ProtectesRoutes>
+        ),
+      },
     ],
   },
 ]);
@@ -153,11 +164,14 @@ const router = createBrowserRouter([
 function App() {
   return (
     <AuthContextProvider>
+    <WishListContextProvider>
       <CartContextProvider>
         <RouterProvider router={router}></RouterProvider>
         <Toaster />
       </CartContextProvider>
+    </WishListContextProvider>
     </AuthContextProvider>
+   
   );
 }
 
