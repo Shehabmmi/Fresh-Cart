@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { authContext } from "../../Context/AuthContext";
 import { cartContext } from "../../Context/CartContext";
-import { wishListContext } from "../../Context/wishListContext";
+import { wishListContext } from "../../Context/WishListContext";
 import logo from "../../assets/favicon.png";
 
 export default function Navbar() {
