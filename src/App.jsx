@@ -1,8 +1,6 @@
-// import { useState } from "react"; // Already commented out ✅
+
 import { Toaster } from "react-hot-toast";
 import Layout from "./Components/Layout/Layout";
-// Remove this unused import:
-// import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Register/Register";
@@ -15,7 +13,7 @@ import ProtectesRoutes from "./Protected/ProtectesRoutes";
 import AuthContextProvider from "./Context/AuthContext";
 import LoginProtected from "./Protected/LoginProtected";
 import ForgetPassword from "./Pages/ForgetPassword/ForgetPassword";
-import VerifyOtp from "./Pages/VerifyOtp/verifyOtp";
+import VerifyOtp from "./Pages/VerifyOtp/VerifyOtp";
 import ResetPassword from "./Pages/ResetPassword/ResetPassword";
 import Error404 from "./Pages/404/Error404";
 import ProductDetails from "./Pages/ProductDetails/ProductDetails";
@@ -132,9 +130,7 @@ const router = createBrowserRouter([
       {
         path: "/productDetails/:id",
         element: (
-          // {<LoginProtected>}
-          <ProductDetails />
-          // </LoginProtected>
+          <ProductDetails />          
         ),
       },
       {
