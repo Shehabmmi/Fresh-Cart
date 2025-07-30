@@ -12,6 +12,8 @@ export default function AllOrders() {
       let { data } = await axios.get(
         `https://ecommerce.routemisr.com/api/v1/orders/user/${userId}`
       );
+      console.log(data);
+      
       setOrders(data);
     } catch (error) {
       console.log("Error fetching orders:", error);
@@ -99,15 +101,6 @@ export default function AllOrders() {
                     <p className="text-mainColor font-semibold">${item.price}</p>
                   </div>
                 ))}
-
-                <div className="flex justify-end gap-4 mt-4">
-                  <button
-                    type="button"
-                    className="bg-mainColor text-white px-5 py-2 rounded-lg font-semibold shadow hover:bg-green-700 transition-colors duration-200"
-                  >
-                    Cancel order
-                  </button>
-                </div>
               </div>
             ))
           ) : (

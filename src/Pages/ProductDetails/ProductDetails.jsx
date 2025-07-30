@@ -1,15 +1,17 @@
 import axios from "axios";
 import { Star } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import ProductCard from "../../Components/ProductCard/ProductCard";
+import { cartContext } from "../../Context/CartContext";
 
 export default function ProductDetails() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(false);
   const [related, setRelated] = useState(null);
+  const {addProductToCart}  = useContext(cartContext)
 
   let { id } = useParams();
 
@@ -19,7 +21,7 @@ export default function ProductDetails() {
       let { data } = await axios.get(
         `https://ecommerce.routemisr.com/api/v1/products/${id}`
       );
-      getRelatedProducts(data.data.category._id)
+      getRelatedProducts(data.data.category._id);
       setProduct(data.data);
     } catch (error) {
       console.log(error);
@@ -33,8 +35,7 @@ export default function ProductDetails() {
       let { data } = await axios.get(
         `https://ecommerce.routemisr.com/api/v1/products?category[in]=${categoryId}`
       );
-            setRelated(data.data)
-
+      setRelated(data.data);
     } catch (error) {
       console.log(error);
     }
@@ -43,8 +44,6 @@ export default function ProductDetails() {
   useEffect(() => {
     getProductDetails();
   }, [id]);
-
-  
 
   if (loading == true) {
     return (
@@ -129,18 +128,20 @@ export default function ProductDetails() {
               </div>
             </div>
 
-            <button className="btn bg-green-600 hover:bg-green-700 w-full flex items-center justify-center">
+            <button onClick={()=>{addProductToCart(id)}}  className="btn bg-green-600 hover:bg-green-700 w-full flex items-center justify-center">
               + Add to cart
             </button>
           </div>
         </div>
       </div>
       <hr />
-      <h1 className="text-6xl my-4 text-gray-700 ms-2 text-[30px]">Related Products</h1>
+      <h1 className="text-6xl my-4 text-gray-700 ms-2 text-[30px]">
+        Related Products
+      </h1>
       <div className="grid md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-                {related?.map((item)=>{
-                  return <ProductCard key={item._id} item={item}/>
-                })}
+        {related?.map((item) => {
+          return <ProductCard key={item._id} item={item} />;
+        })}
       </div>
     </div>
   );

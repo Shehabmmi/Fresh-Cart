@@ -46,7 +46,7 @@ export default function Navbar() {
         {token ? (
           <ul className="hidden lg:flex xl:flex space-x-6 items-center">
             <li className="text-xl hover:text-mainColor">
-              <NavLink to={"/home"}>Home</NavLink>
+              <NavLink to={"/"}>Home</NavLink>
             </li>
             <li className="text-xl hover:text-mainColor">
               <NavLink to={"/prodcuts"}>Products</NavLink>
@@ -124,7 +124,7 @@ export default function Navbar() {
           {token && (
             <ul className="flex flex-col space-y-3 my-4">
               <li>
-                <NavLink className="text-xl hover:text-mainColor" to="/home">
+                <NavLink className="text-xl hover:text-mainColor" to="/">
                   Home
                 </NavLink>
               </li>
