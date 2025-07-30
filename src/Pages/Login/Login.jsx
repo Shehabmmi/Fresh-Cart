@@ -53,7 +53,7 @@ export default function Login() {
       verifyToken()
       toast.success("logged in successfully");
       setTimeout(() => {
-        navigate("/home");
+        navigate("/");
       }, 2000);
     } catch (error) {
       toast.error(error.response.data.message);
