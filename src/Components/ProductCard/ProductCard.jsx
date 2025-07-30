@@ -9,7 +9,7 @@ export default function ProductCard({ item }) {
 
 
   return (
-    <div className="relative group rounded-lg shadow-md overflow-hidden">
+    <div className="relative group rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-duration="1500">
       {/* Icons in center on hover */}
       <div className="absolute inset-0 flex items-center justify-center bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
         <div className="flex gap-4">

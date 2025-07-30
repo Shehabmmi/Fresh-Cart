@@ -1,4 +1,3 @@
-
 import { Toaster } from "react-hot-toast";
 import Layout from "./Components/Layout/Layout";
 import Home from "./Pages/Home/Home";
@@ -23,9 +22,9 @@ import CategoriesDetails from "./Pages/CategoriesDetails/CategoriesDetails";
 import BrandsDetails from "./Pages/BrandsDetails/BrandsDetails";
 import WishList from "./Pages/WishList/WishList";
 import WishListContextProvider from "./Context/WishListContext";
-
-
-
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -75,7 +74,7 @@ const router = createBrowserRouter([
         path: "/allorders",
         element: (
           <ProtectesRoutes>
-            <AllOrders/> 
+            <AllOrders />
           </ProtectesRoutes>
         ),
       },
@@ -129,21 +128,15 @@ const router = createBrowserRouter([
       },
       {
         path: "/productDetails/:id",
-        element: (
-          <ProductDetails />          
-        ),
+        element: <ProductDetails />,
       },
       {
         path: "/categoriesDetails/:id",
-        element: (
-          <CategoriesDetails />
-        ),
+        element: <CategoriesDetails />,
       },
       {
         path: "/brandsDetails/:id",
-        element: (
-          <BrandsDetails />
-        ),
+        element: <BrandsDetails />,
       },
       {
         path: "/wishList",
@@ -158,16 +151,19 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  useEffect(() => {
+    AOS.init({ duration: 500 });
+  }, []);
+
   return (
     <AuthContextProvider>
-    <WishListContextProvider>
-      <CartContextProvider>
-        <RouterProvider router={router}></RouterProvider>
-        <Toaster />
-      </CartContextProvider>
-    </WishListContextProvider>
+      <WishListContextProvider>
+        <CartContextProvider>
+          <RouterProvider router={router}></RouterProvider>
+          <Toaster />
+        </CartContextProvider>
+      </WishListContextProvider>
     </AuthContextProvider>
-   
   );
 }
 
