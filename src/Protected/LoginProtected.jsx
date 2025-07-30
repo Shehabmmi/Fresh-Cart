@@ -6,7 +6,7 @@ export default function LoginProtected({children}) {
     let {token} = useContext(authContext)
   return (
     <div>
-      {!token ? children : <Navigate to={`/home`}/> }
+      {!token ? children : <Navigate to={`/`}/> }
     </div>
   )
 }
